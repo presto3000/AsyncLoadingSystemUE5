@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Interfaces/PartInterface.h"
 #include "AsyncTestActor.generated.h"
 
 UCLASS()
-class ASYNCLOADINGSYSTEM_API AAsyncTestActor : public AActor
+class ASYNCLOADINGSYSTEM_API AAsyncTestActor : public AActor, public IPartInterface
 {
 	GENERATED_BODY()
 
