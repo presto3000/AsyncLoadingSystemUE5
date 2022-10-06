@@ -3,12 +3,19 @@
 
 #include "Actors/AsyncTestActor.h"
 
+#include "Parts/Skeletal/AL_SkeletalMeshComp.h"
+#include "Parts/Static/AL_StaticMeshComp.h"
+
 
 // Sets default values
 AAsyncTestActor::AAsyncTestActor()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	AsyncSkeletalMesh = CreateDefaultSubobject<UAL_SkeletalMeshComp>(TEXT("Skeletal Mesh Comp"));
+	AsyncSkeletalMesh->SetupAttachment(RootComponent);
+	
+	AsyncStaticMesh = CreateDefaultSubobject<UAL_StaticMeshComp>(TEXT("Static Mesh Comp"));
+	AsyncStaticMesh->SetupAttachment(RootComponent);
+	
 }
 
 // Called when the game starts or when spawned
@@ -18,9 +25,4 @@ void AAsyncTestActor::BeginPlay()
 	
 }
 
-// Called every frame
-void AAsyncTestActor::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-}
 
