@@ -68,6 +68,12 @@ protected:
 	TArray<UAL_StaticMeshComp*> GetAvailableStaticParts() const;
 
 #pragma endregion FUNCTIONS
+
+	UFUNCTION()
+	void OnSkeletalPartsLoaded();
+
+	UFUNCTION()
+	void OnStaticPartsLoaded();
 	
 private:
 
